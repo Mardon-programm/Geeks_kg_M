@@ -7,5 +7,4 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('courses/', courses, name='courses'),
     path('courses/<int:course_id>/', course_detail, name='course_detail'),
-
 ]
