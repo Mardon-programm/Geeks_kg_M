@@ -1,0 +1,12 @@
+{% extends 'geeks_htmls/home.html' %}
+
+{% block content %}
+  <div class="container">
+      <h1>{{ course.title }}</h1>
+      <p><strong>Описание:</strong> {{ course.description }}</p>
+      <p><strong>Цена:</strong> {{ course.price }} сом</p>
+      <p><strong>Длительность:</strong> {{ course.duration }}</p>
+
+      <a href="{% url 'courses' %}">← Назад ко всем курсам</a>
+  </div>
+{% endblock %}

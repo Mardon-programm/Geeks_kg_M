@@ -1,0 +1,15 @@
+{% extends 'geeks_htmls/home.html' %}
+
+{% block content %}
+    <h1>Курсы</h1>
+    <ul class="list-group">
+        {% for course in courses %}
+            <li class="list-group-item">
+                <h3><a href="{% url 'course_detail' course.id %}">{{ course.title }}</a></h3>
+                <p>{{ course.description }}</p>
+                <strong>Цена:</strong> {{ course.price }} сом
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}" class="btn btn-secondary mt-3">← На главную</a>
+{% endblock %}

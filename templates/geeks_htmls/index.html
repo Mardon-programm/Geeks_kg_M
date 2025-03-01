@@ -1,0 +1,24 @@
+{% extends 'geeks_htmls/home.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1>Добро пожаловать в Geeks.kg!</h1>
+        <p>Мы обучаем студентов самым востребованным IT-навыкам. Присоединяйтесь к нам!</p>
+
+        <h2 class="mt-4">Оставьте заявку</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+
+        <h2 class="mt-4">Наши курсы</h2>
+        <ul class="list-group">
+            {% for course in courses %}
+                <li class="list-group-item">
+                    <a href="{% url 'course_detail' course.id %}">{{ course.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,7 +1,8 @@
 from django import forms
-from .models import ContactForm  # Импортируем модель
+from .models import Cours, ContactForm
 
-class ContactFormForm(forms.ModelForm):  # Название формы
+
+class ContactFormForm(forms.ModelForm):
     class Meta:
-        model = ContactForm
-        fields = ['first_name', 'last_name', 'age', 'phone_number']  # Поля формы
+        model = ContactForm  
+        fields = ['first_name', 'last_name', 'age', 'phone_number'] 
